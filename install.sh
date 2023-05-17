@@ -101,8 +101,8 @@ config_after_install() {
             local usernameTemp=$(head -c 6 /dev/urandom | base64)
             local passwordTemp=$(head -c 6 /dev/urandom | base64)
             local portTemp=$(echo $RANDOM)
-            /usr/local/x-ui/x-ui setting -username ${usernameTemp} -password ${passwordTemp}
-            /usr/local/x-ui/x-ui setting -port ${portTemp}
+            /usr/local/x-ui/x-ui.sh setting -username ${usernameTemp} -password ${passwordTemp}
+            /usr/local/x-ui/x-ui.sh setting -port ${portTemp}
             echo -e "检测到您属于全新安装,出于安全考虑已自动为您生成随机用户与端口:"
             echo -e "###############################################"
             echo -e "${green}面板登录用户名:${usernameTemp}${plain}"
